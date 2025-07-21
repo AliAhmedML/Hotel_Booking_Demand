@@ -25,14 +25,14 @@ This project implements a **hotel booking demand prediction system** using machi
 2. Create a dedicated environment:  
 
    ```bash  
-   conda create -p venv_Disease python==3.11 
+   conda create -p venv_Hotel python==3.11 
 
 ## 🛠️ Environment Setup
 
 ### Activate the Conda Environment
 
 ```bash
-conda activate venv_Disease
+conda activate ./venv_Hotel
 ```
 
 ## 🛠️ Installation
@@ -154,7 +154,7 @@ Download and install [CUDA Toolkit 12.5.0](https://developer.nvidia.com/cuda-12-
 1. Make sure your virtual environment is activated:
 
    ```bash
-   conda activate ./venv_Disease
+   conda activate ./venv_Hotel
 2. Run the Streamlit app:
 
    ```bash
