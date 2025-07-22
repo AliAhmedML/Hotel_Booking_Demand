@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hotel Booking Demand Prediction</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Google Fonts for better typography -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+    <div class="container">
+        <h2>Hotel Booking Demand Prediction</h2>
+        <form method="post" autocomplete="off">
+    <div class="form-group">
+        <label>Booking ID</label>
+        <input type="text" name="Booking_ID" placeholder="Enter Booking ID" required>
+    </div>
+    <div class="form-group">
+        <label>Number of Adults</label>
+        <input type="number" name="number_of_adults" min="1" max="10" required>
+    </div>
+    <div class="form-group">
+        <label>Number of Children</label>
+        <input type="number" name="number_of_children" min="0" max="10" required>
+    </div>
+    <div class="form-group">
+        <label>Number of Weekend Nights</label>
+        <input type="number" name="number_of_weekend_nights" min="0" max="10" required>
+    </div>
+    <div class="form-group">
+        <label>Number of Week Nights</label>
+        <input type="number" name="number_of_week_nights" min="0" max="10" required>
+    </div>
+    <div class="form-group">
+        <label>Type of Meal</label>
+        <select name="type_of_meal" required>
+            <option value="">Select...</option>
+            <option value="Meal Plan 1">Meal Plan 1</option>
+            <option value="Meal Plan 2">Meal Plan 2</option>
+            <option value="Meal Plan 3">Meal Plan 3</option>
+            <option value="Not Selected">Not Selected</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Car Parking Space</label>
+        <input type="number" name="car_parking_space" min="0" max="5" required>
+    </div>
+    <div class="form-group">
+        <label>Room Type</label>
+        <select name="room_type" required>
+            <option value="">Select...</option>
+            <option value="Room_Type 1">Room_Type 1</option>
+            <option value="Room_Type 2">Room_Type 2</option>
+            <option value="Room_Type 3">Room_Type 3</option>
+            <option value="Room_Type 4">Room_Type 4</option>
+            <option value="Room_Type 5">Room_Type 5</option>
+            <option value="Room_Type 6">Room_Type 6</option>
+            <option value="Room_Type 7">Room_Type 7</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Lead Time</label>
+        <input type="number" name="lead_time" min="0" max="365" required>
+    </div>
+    <div class="form-group">
+        <label>Market Segment Type</label>
+        <select name="market_segment_type" required>
+            <option value="">Select...</option>
+            <option value="Online">Online</option>
+            <option value="Offline">Offline</option>
+            <option value="Corporate">Corporate</option>
+            <option value="Complementary">Complementary</option>
+            <option value="Aviation">Aviation</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Repeated</label>
+        <select name="repeated" required>
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label>P_C</label>
+        <input type="number" name="P_C" min="0" max="10" required>
+    </div>
+    <div class="form-group">
+        <label>P_not_C</label>
+        <input type="number" name="P_not_C" min="0" max="10" required>
+    </div>
+    <div class="form-group">
+        <label>Average Price</label>
+        <input type="number" step="any" name="average_price_" min="0" required>
+    </div>
+    <div class="form-group">
+        <label>Special Requests</label>
+        <input type="number" name="special_requests" min="0" max="10" required>
+    </div>
+    <div class="form-group">
+        <label>Day</label>
+        <input type="number" name="day" min="1" max="31" required>
+    </div>
+    <div class="form-group">
+        <label>Month</label>
+        <input type="number" name="month" min="1" max="12" required>
+    </div>
+    <div class="form-group">
+        <label>Year</label>
+        <input type="number" name="year" min="2000" max="2100" required>
+    </div>
+    <div class="form-group-full">
+        <input type="submit" value="Predict">
+        {% if prediction %}
+            <div class="result">
+                Prediction: {{ prediction }}
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
