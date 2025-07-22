@@ -133,29 +133,26 @@ Download and install [CUDA Toolkit 12.5.0](https://developer.nvidia.com/cuda-12-
 ## 📁 Project Structure
 
 1. **Main Application**
-   - `app.py`: Launches the Streamlit interface for disease prediction.
+   - `app.py`: Launches the Flask interface for Hotel Demand prediction.
 
-2. **Model Logic (`models/`)**
-   - `__init__.py`: Initializes model module imports.
-   - `diabetes_model.py`: Contains logic for diabetes prediction.
-   - `heart_model.py`: Contains logic for heart disease prediction.
-   - `parkinson_model.py`: Contains logic for Parkinson’s disease prediction.
+2. **Prediction Logic**
+   - `predictor.py`: Contains the `HotelBookingPredictor` class and all machine learning logic.
 
-3. **Styling (`styles/`)**
-   - `style.css`: Custom CSS used to style the Streamlit frontend.
+3. **Templates (`templates/`)**
+   - `index.html`: Main HTML template for the Flask web interface.
 
-4. **Utilities (`utils/`)**
-   - `load_css.py`: Helper function to load external CSS into the app.
+4. **Static Files (`static/`)**
+   - `style.css`: Custom CSS used to style the Flask frontend.
 
 ## 🚀 Run the App
 
-### Start the Streamlit Application
+### Start the Flask Application
 
 1. Make sure your virtual environment is activated:
 
    ```bash
    conda activate ./venv_Hotel
-2. Run the Streamlit app:
+2. Run the Flask app:
 
    ```bash
-   streamlit run app.py
+   python app.py
